@@ -85,7 +85,9 @@ def printDM(data):
 
 if __name__ == '__main__':
     try:
-        loop = asyncio.get_event_loop()
+        # loop = asyncio.get_event_loop()
+        loop =  asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
         loop.run_until_complete(startup())
     except Exception as e:
         print('退出')
